@@ -1,7 +1,7 @@
 # R TIPS ----
 # TIP 010 | Must-Know Tidyverse Features: Pivoting Data ----
 #
-# 👉 For Weekly R-Tips, Sign Up Here: https://mailchi.mp/business-science/r-tips-newsletter
+# 👉 For Weekly R-Tips, Sign Up Here: https://learn.business-science.io/r-tips-newsletter
 
 # LIBRARIES ----
 library(tidyquant)
@@ -18,8 +18,12 @@ mpg
 mpg_pivot_table_1 <- mpg %>%
     group_by(manufacturer) %>%
     count(class, name = "n") %>%
-    pivot_wider(names_from = class, values_from = n, values_fill = 0) %>%
-    ungroup()
+    ungroup() %>%
+    pivot_wider(
+        names_from  = class,
+        values_from = n,
+        values_fill = 0
+    )
 
 # 2.0 Pivot Table ----
 
@@ -59,10 +63,10 @@ mpg_long_summary_table %>%
     labs(title = "Class by Auto Manufacturer")
 
 # LEARNING MORE ----
-# - A lot more to working with data
-# - Become a PRO: Check out R For Business Course (DS4B 101-R)
-#   - Data Wrangling (Weeks 2 & 3)
-#   - Visualization (Week 4)
+
+# FREE MASTERCLASS
+# - 10 SECRETS TO BECOMING A DATA SCIENTIST
+#   https://learn.business-science.io/free-rtrack-masterclass
 
 
 
